@@ -1,8 +1,12 @@
-const { model,Schema } = require("mongoose")
+const { Schema,model } = require("mongoose");
 
-const userSchema= new Schema({
-    email:String,
-    password: String
-})
-const Userdata= model("User", userSchema);
-module.exports= Userdata;
+const UserSchema = new Schema({
+  email: String,
+  password: String,
+},
+  { strictQuery: false }
+);
+// mongoose.set('strictQuery', true);
+
+const Userdata = model("User", UserSchema);
+module.exports = Userdata;

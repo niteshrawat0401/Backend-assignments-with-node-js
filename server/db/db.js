@@ -1,2 +1,2 @@
-// const mongoose= require("mongoose");
-// module.exports= mongoose.connect("mongodb://localhost:27017/authData")
+const mongoose= require("mongoose");
+module.exports= mongoose.connect("mongodb://localhost:27017/authdata");

@@ -41,7 +41,6 @@ export const Login = () => {
         <br />
         <input
           className="inpu2"
-          //   type={showPassword ? "text" : "password"}
           name="password"
           placeholder="Password"
           value={loginData.password}
@@ -52,9 +51,9 @@ export const Login = () => {
         <input className="inpu3" type="submit" value="Login" />
       </form>
       <div style={{ paddingTop: "2px",marginTop: "8px" }}>
-          <span>Already have account </span>
+          <span>Create an account </span>
           <Link style={{ color: "blue", fontSize: "15px" }} to={"/signup"}>
-            Login
+            Sign up
           </Link>
         </div>
     </div>
