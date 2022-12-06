@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./style.css/Login.css";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 let initData = {
   email: "",
@@ -10,16 +11,25 @@ let initData = {
 
 export const Login = () => {
   const [loginData, setLoginData] = useState(initData);
+  const navigate = useNavigate();
 
   function handlechanaged(e) {
     const { name, value } = e.target;
     setLoginData({ ...loginData, [name]: value });
   }
 
-  function handleLogin() {
-
+  function handleLogin(e) {
+    e.preventDefault();
+    axios
+      .post(`http://localhost:8080/users/login`, loginData)
+      .then((res) => {
+        console.log("data", res.data);
+        setLoginData({ ...initData });
+        alert("Sign in Successful")
+        navigate("/");
+      })
+      .catch((e) => console.log(e));
   }
-  function handleLogin() {}
 
   return (
     <div className="login_main_container">
@@ -50,12 +60,12 @@ export const Login = () => {
         <br />
         <input className="inpu3" type="submit" value="Login" />
       </form>
-      <div style={{ paddingTop: "2px",marginTop: "8px" }}>
-          <span>Create an account </span>
-          <Link style={{ color: "blue", fontSize: "15px" }} to={"/signup"}>
-            Sign up
-          </Link>
-        </div>
+      <div style={{ paddingTop: "2px", marginTop: "8px" }}>
+        <span>Create an account </span>
+        <Link style={{ color: "blue", fontSize: "15px" }} to={"/signup"}>
+          Sign up
+        </Link>
+      </div>
     </div>
   );
 };
