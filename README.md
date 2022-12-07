@@ -1,8 +1,6 @@
 # Backend-assignments-with-node-js
 
 
-<h3>Backend-assignments-with-node-js</h3>
-<br/>
 Step 1: Start the MongoDB database in your system.
 
 <h3>Step 2: Install node_modules.</h3>
