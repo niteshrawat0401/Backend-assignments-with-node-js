@@ -6,7 +6,6 @@ const UserSchema = new Schema({
 },
   { strictQuery: false }
 );
-// mongoose.set('strictQuery', true);
 
 const Userdata = model("User", UserSchema);
 module.exports = Userdata;

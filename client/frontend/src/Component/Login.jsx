@@ -23,12 +23,21 @@ export const Login = () => {
     axios
       .post(`http://localhost:8080/users/login`, loginData)
       .then((res) => {
+        localStorage.setItem(
+          "emailid",
+          JSON.stringify({
+            email: loginData.email,
+          })
+        );
         console.log("data", res.data);
         setLoginData({ ...initData });
-        alert("Sign in Successful")
+        alert("Login in Successful");
         navigate("/");
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        alert("Invalid Password");
+        console.log(e);
+      });
   }
 
   return (

@@ -1,37 +1,20 @@
-import React from 'react'
-import { useState,useEffect } from 'react';
-import "./Home.css"
-import { Navigate, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React from "react";
+import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
-  const [data, setData]= useState([]);
-  const navigate= useNavigate();
+  const navigate = useNavigate();
+  let pvtroute = JSON.parse(localStorage.getItem("emailid"));
 
-  useEffect(()=>{
-    getData()
-  },[])
-
-  function getData(){
-    axios.get("http://localhost:8080/users/login")
-    .then((res)=>{
-      setData(res.data);
-    })
-    .catch((err)=>{
-      console.log(err);
-    })
-  }
-  
-
-
-  const handleClick=()=>{
-    navigate("/login")
-  }
+  const handleClick = () => {
+    localStorage.removeItem("emailid");
+    navigate("/login");
+  };
 
   return (
-    <div className='main_container'>
-        <h2>email</h2>
-        <button onClick={handleClick}>Logout</button>
+    <div className="main_container">
+      <p>{pvtroute.email}</p>
+      <button onClick={handleClick}>Logout</button>
     </div>
-  )
-}
+  );
+};

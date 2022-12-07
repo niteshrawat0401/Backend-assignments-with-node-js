@@ -3,14 +3,20 @@ import { Login } from './Component/Login';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './Home/Home';
 import { Signup } from './Component/Signup';
+import Pvtroute from './Home/Pvtroute';
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home/>}/>
+      {/* <Route path='/' element={
+          <Pvtroute>
+           <Home/>
+        </Pvtroute>
+      }/> */}
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/' element={<Home/>}/>
       </Routes>
     </div>
   );
