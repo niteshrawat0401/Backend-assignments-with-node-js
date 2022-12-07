@@ -29,7 +29,7 @@ export const Login = () => {
             email: loginData.email,
           })
         );
-        console.log("data", res.data);
+        // console.log("data", res.data);
         setLoginData({ ...initData });
         alert("Login in Successful");
         navigate("/");

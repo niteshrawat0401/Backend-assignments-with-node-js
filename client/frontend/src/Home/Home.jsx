@@ -7,7 +7,7 @@ export const Home = () => {
   let pvtroute = JSON.parse(localStorage.getItem("emailid"));
 
   const handleClick = () => {
-    localStorage.removeItem("emailid");
+    // localStorage.removeItem("emailid");
     navigate("/login");
   };
 

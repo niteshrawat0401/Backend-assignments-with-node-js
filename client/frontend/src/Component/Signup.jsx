@@ -22,7 +22,7 @@ export const Signup = () => {
     axios
       .post("http://localhost:8080/users/signup", signData)
       .then((res) => {
-        console.log("data", res.data);
+        // console.log("data", res.data);
         setSignData({ ...initialObj });
         alert("Sign in Successful");
         navigate("/login");
