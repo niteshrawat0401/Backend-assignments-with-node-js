@@ -32,7 +32,7 @@ export const Login = () => {
         // console.log("data", res.data);
         setLoginData({ ...initData });
         alert("Login in Successful");
-        navigate("/");
+        navigate("/home");
       })
       .catch((e) => {
         alert("Invalid Password");

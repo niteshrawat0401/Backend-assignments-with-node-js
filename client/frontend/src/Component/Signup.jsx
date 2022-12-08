@@ -25,7 +25,7 @@ export const Signup = () => {
         // console.log("data", res.data);
         setSignData({ ...initialObj });
         alert("Sign in Successful");
-        navigate("/login");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
@@ -62,7 +62,7 @@ export const Signup = () => {
       </form>
       <div style={{ paddingTop: "2px", marginTop: "8px" }}>
         <span>Already have account </span>
-        <Link style={{ color: "blue", fontSize: "15px" }} to={"/login"}>
+        <Link style={{ color: "blue", fontSize: "15px" }} to={"/"}>
           Login
         </Link>
       </div>
